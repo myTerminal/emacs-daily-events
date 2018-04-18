@@ -43,3 +43,7 @@ or
 
 Emacs will visually notify you when one of the events occur by flashing the
 screen a few times.
+
+## Dependencies
+
+* [emacs-visual-notifications](https://github.com/myTerminal/emacs-visual-notifications)
