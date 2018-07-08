@@ -6,7 +6,7 @@
 ;; Keywords: library
 ;; Maintainer: Mohammed Ismail Ansari <team.terminal@gmail.com>
 ;; Created: 2017/09/11
-;; Package-Requires: ((emacs "24") (cl-lib "0.5") (emacs-visual-notifications "20170908.2035"))
+;; Package-Requires: ((emacs "24") (cl-lib "0.5") (emacs-visual-notifications "20180707.2135"))
 ;; Description: An Emacs package to notify you on specified daily occurring events
 ;; URL: http://ismail.teamfluxion.com
 ;; Compatibility: Emacs24
