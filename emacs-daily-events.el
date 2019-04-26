@@ -1,4 +1,4 @@
-;;; emacs-daily-events.el --- An Emacs package to notify you on specified daily occurring events -*- lexical-binding: t; coding: utf-8; -*-
+;;; emacs-daily-events.el --- An Emacs package to notify you on specified daily occurring events -*- lexical-binding: t; -*-
 
 ;; This file is not part of Emacs
 
