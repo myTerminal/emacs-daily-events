@@ -87,7 +87,7 @@
                 (not (equal time-right-now
                             emacs-daily-events--recent-event)))
            (progn
-             (emacs-visual-notifications-notify-continuous)
+             (emacs-visual-notifications-notify-times 5)
              (setq emacs-daily-events--recent-event
                    (car current-event)))))))
 
