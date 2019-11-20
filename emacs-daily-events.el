@@ -3,11 +3,11 @@
 ;; This file is not part of Emacs
 
 ;; Author: Mohammed Ismail Ansari <team.terminal@gmail.com>
-;; Version: 1.0
+;; Version: 1.1
 ;; Keywords: library
 ;; Maintainer: Mohammed Ismail Ansari <team.terminal@gmail.com>
 ;; Created: 2017/09/11
-;; Package-Requires: ((emacs "24") (emacs-visual-notifications "20180707.2135"))
+;; Package-Requires: ((emacs "24") (emacs-visual-notifications "20191119.2237"))
 ;; Description: An Emacs package to notify you on specified daily occurring events
 ;; URL: http://ismail.teamfluxion.com
 ;; Compatibility: Emacs24
@@ -73,10 +73,12 @@
 
 ;;;###autoload
 (defun emacs-daily-events-set-events (events)
+  "Sets daily events"
   (setq emacs-daily-events--data-events
         events))
 
 (defun emacs-daily-events--check-for-events ()
+  "Checks whether an event has occured"
   (let* ((time-right-now (format-time-string "%H%M"))
          (event-times (mapcar 'car emacs-daily-events--data-events))
          (current-event (member time-right-now
@@ -84,15 +86,14 @@
     (cond ((and current-event
                 (not (equal time-right-now
                             emacs-daily-events--recent-event)))
-           (progn (emacs-visual-notification-flash 5
-                                                   1
-                                                   1)
-                  (setq emacs-daily-events--recent-event
-                        (car current-event)))))))
+           (progn
+             (emacs-visual-notifications-notify-continuous)
+             (setq emacs-daily-events--recent-event
+                   (car current-event)))))))
 
 ;;;###autoload
 (define-minor-mode emacs-daily-events-global-mode
-  "Toggle emace-home-global-mode"
+  "Toggles emace-home-global-mode"
   :init-value nil
   :global t
   :lighter " emacs-daily-events"
