@@ -73,12 +73,12 @@
 
 ;;;###autoload
 (defun emacs-daily-events-set-events (events)
-  "Sets daily events"
+  "Sets daily events."
   (setq emacs-daily-events--data-events
         events))
 
 (defun emacs-daily-events--check-for-events ()
-  "Checks whether an event has occured"
+  "Checks whether an event has occured."
   (let* ((time-right-now (format-time-string "%H%M"))
          (event-times (mapcar 'car emacs-daily-events--data-events))
          (current-event (member time-right-now
@@ -93,7 +93,7 @@
 
 ;;;###autoload
 (define-minor-mode emacs-daily-events-global-mode
-  "Toggles emace-home-global-mode"
+  "Toggles emace-home-global-mode."
   :init-value nil
   :global t
   :lighter " emacs-daily-events"
